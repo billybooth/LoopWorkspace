@@ -256,6 +256,8 @@ platform :ios do
       app_identifier: [],
     )
 
+    find / -name match_version.txt
+    
     UI.success "decrypting repo!"
     storage = Match::Storage.for_mode("git", { git_url: git_url, shallow_clone: shallow_clone, git_branch: branch, clone_branch_directly: true})  
     storage.download
